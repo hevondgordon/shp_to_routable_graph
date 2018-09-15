@@ -1,5 +1,5 @@
 ## Step 1 — Install vagrant
-* Ensure that you have vagrant installed. [vagrant can be found here](https://www.vagrantup.com)
+* Ensure that you have vagrant installed. [vagrant can be found here](https://www.vagrantup.com).
 * After a successful installation of vagrant, run the following command from the project root:
 
 ```
@@ -34,6 +34,6 @@ cd /etc/neo4j/
 
 sudo nano neo4j.conf
 
-uncomment this line 
+#uncomment the following line 
 dbms.connectors.default_listen_address=0.0.0.0
 ```
