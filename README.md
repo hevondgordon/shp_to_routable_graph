@@ -8,14 +8,17 @@ vagrant up && vagrant ssh
 ```
 
 ## Step 2 — Setup virtual environment
-* Install pip. `sudo apt install python3-pip`
-* Install virtualenv. `sudo pip3 install virtualenv`
+* Install pip. `sudo apt install python-pip`
+* Install virtualenv. `sudo pip install virtualenv`
 * Navigate to vagrant shared folder. `cd /vagrant`
-* Create virtual environment. `virtualenv venv`
+* Create virtual environment. `virtualenv -p python2.7 venv`
 * Activate virtual environment. `. venv/bin/activate`
-* Install requirements. `pip3 install -r requirements.txt`
+* Install requirements. `pip install -r requirements.txt`
 
-## Step 3 — Install Neo4j
+## Step 3  — Install GDAL
+* `sudo apt-get install -y libgdal-dev python-gdal`
+
+## Step 4 — Install Neo4j
 * Install java. `sudo apt-get install openjdk-8-jre-headless`
 * Install neo4j 
 ```
