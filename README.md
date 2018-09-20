@@ -1,3 +1,4 @@
+# Shp to routable graph draft
 ## Step 1 — Install vagrant
 * Ensure that you have vagrant installed. [vagrant can be found here](https://www.vagrantup.com).
 * After a successful installation of vagrant, run the following command from the project root:
@@ -18,22 +19,21 @@ vagrant up && vagrant ssh
 * Install java. `sudo apt-get install openjdk-8-jre-headless`
 * Install neo4j 
 ```
-wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
+wget http://download.neo4j.org/artifact?edition=community&version=3.4.7&distribution=tarball
 
-echo 'deb https://debian.neo4j.org/repo stable/' | sudo tee -a /etc/apt/sources.list.d/neo4j.list
+tar -xzvf artifact.php?name=neo4j-community-3.4.7-unix.tar.gz
 
-sudo apt-get update
+sudo mv neo4j-community-3.4.7 /etc
 
-sudo apt-get install neo4j=1:3.4.7
-```
+cd /etc/neo4j-community-3.4.7
 
-* Update Neo4j config to listen on global interface.
+sudo nano conf/neo4j.conf
 
-```
-cd /etc/neo4j/
-
-sudo nano neo4j.conf
-
-#uncomment the following line 
+# uncomment this line in the neo4j conf file
 dbms.connectors.default_listen_address=0.0.0.0
+
+./bin/neo4j start
+
+cd /vagrant
 ```
+
