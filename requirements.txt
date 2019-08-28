@@ -1,5 +1,5 @@
 pygdal==1.11.3.3
-django==1.11
+django==1.11.23
 neo4j-driver==1.6.1
 
 
